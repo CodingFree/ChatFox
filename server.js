@@ -54,7 +54,8 @@
 
 
       new_user.save(function(err) {
-
+        //In case there is any error while saving the user,
+        //we reply with a true error.
         if (err) {
 
           fn(true);
