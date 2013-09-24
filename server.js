@@ -48,9 +48,9 @@
       socket.broadcast.emit('user message', socket.nickname, msg);
     });
 
-    socket.on('nickname', function (nick, fn) {
+    socket.on('nickname', function (nick, endpoint, fn) {
 
-      var new_user = new db.User({nick: nick});
+      var new_user = new db.User({nick: nick, endpoint: endpoint});
 
 
       new_user.save(function(err) {
